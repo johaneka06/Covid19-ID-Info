@@ -8,7 +8,9 @@ class PagesController extends Controller
 {
     public function Home()
     {
-        return view('index');
+        $res = new APIController();
+        $msg = $res->FetchDataIndonesia();
+        return view('index', ['result' => $msg]);
     }
 
     public function About()

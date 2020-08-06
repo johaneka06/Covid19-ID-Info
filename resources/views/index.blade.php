@@ -3,6 +3,7 @@
 @section('title', 'Indonesia COVID-19 Case Information')
 
 @section('content')
+
 <div class="jumbotron jumbotron-fluid bg-primary">
   <div class="container">
     <h1 class="display-4 text-center" style="color: white;">Informasi Kasus COVID-19 di Indonesia</h1>
@@ -20,7 +21,8 @@
         <div class="card" style="background-color: red;">
           <div class="card-body">
             <h3>Total kasus</h3>
-            <h5>123456789</h5>
+            <h5>{{ number_format($result->update->total->jumlah_positif, 0, ",", ".") }}</h5>
+            <i>(+{{ number_format($result->update->penambahan->jumlah_positif, 0, ",", ".") }})</i>
           </div>
         </div>
       </div>
@@ -29,7 +31,8 @@
         <div class="card" style="background-color: orange;">
           <div class="card-body">
             <h3>Kasus Dirawat</h3>
-            <h5>123456789</h5>
+            <h5>{{ number_format($result->update->total->jumlah_dirawat, 0, ",", ".") }}</h5>
+            <i>(+{{ number_format($result->update->penambahan->jumlah_dirawat, 0, ",", ".") }})</i>
           </div>
         </div>
       </div>
@@ -38,7 +41,8 @@
         <div class="card" style="background-color: green;">
           <div class="card-body">
             <h3>Kasus Sembuh</h3>
-            <h5>123456789</h5>
+            <h5>{{ number_format($result->update->total->jumlah_sembuh, 0, ",", ".") }}</h5>
+            <i>(+{{ number_format($result->update->penambahan->jumlah_sembuh, 0, ",", ".") }})</i>
           </div>
         </div>
       </div>
@@ -47,7 +51,8 @@
         <div class="card" style="background-color: black;">
           <div class="card-body">
             <h3>Kasus Meninggal</h3>
-            <h5>123456789</h5>
+            <h5>{{ number_format($result->update->total->jumlah_meninggal, 0, ",", ".") }}</h5>
+            <i>(+{{ number_format($result->update->penambahan->jumlah_meninggal, 0, ",", ".") }})</i>
           </div>
         </div>
       </div>
@@ -99,7 +104,7 @@
     </div>
   </div>
   <!-- End global div -->
-  <h6 class="mt-5 text-center" style="color: black;">Update Terakhir: Hari ini</h6>
+  <h6 class="mt-5 text-center" style="color: black;">Update Terakhir: {{ $result->update->penambahan->created }}</h6>
   <br><br><br><br>
 </div>
 

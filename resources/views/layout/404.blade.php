@@ -8,28 +8,15 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
-  <title>@yield('title')</title>
+
+  <title>Under Construction</title>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-      <a class="navbar-brand" href="{{ url('/') }}" id="idx">COVID-19</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" id="home" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-link active" id="provinsi" href="{{ url('/provinsi') }}">Provinsi</a>
-          <a class="nav-link active" id="tentang" href="{{url('/about')}}">Tentang</a>
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <br><br><br><br><br><br><br><br><br><br><br><br>
+  <h2 class="text-center">This section is under development process. Come back tomorrow.</h2>
+  <h4 class="text-center mt-3"><a href="{{url('/')}}">Home</a></h4>
 
-  @yield('content')
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

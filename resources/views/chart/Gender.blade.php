@@ -8,32 +8,28 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script type="text/javascript">
   var ctx = document.getElementById('myChart').getContext('2d');
-  
+
   var Label = new Array();
   var Data = new Array();
-  
-  var dt = @json($indonesia->update->harian);
-  
+
+  var dt = @json($data -> jenis_kelamin);
+
   $.noConflict();
-  $.each(dt, function(i, data){
-    get = new Date(data.key_as_string);
-    date = (("0" + get.getDate()).slice(-2) + "-" + ("0" + (get.getMonth() + 1)).slice(-2) + "-" + (get.getFullYear()))
-    Label.push(date);
-    Data.push(data.jumlah_positif_kum.value);
+  $.each(dt, function(i, data) {
+    Label.push(data.key)
+    Data.push(data.doc_count);
   })
 
   var chart = new Chart(ctx, {
     // The type of chart we want to create
-    type: 'line',
+    type: 'pie',
 
     // The data for our dataset
     data: {
       labels: Label,
       datasets: [{
-        label: 'Kasus positif Indonesia',
-        backgroundColor: 'rgb(255, 0, 0)',
-        borderColor: 'rgb(255, 99, 132)',
-        data: Data
+        data: Data,
+        backgroundColor: ['rgb(64, 83, 255)', 'rgb(255, 203, 203)']
       }]
     },
 

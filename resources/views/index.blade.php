@@ -58,7 +58,15 @@
       </div>
       <a href="{{ url('/provinsi') }}" class="mt-3">Lihat kasus per-provinsi</a>
     </div>
-    @include('idxchart')
+    <div class="mt-3 text-center justify-content-center">
+      <div><h3>Lihat grafik</h3></div>
+      <div>
+        <button class="btn btn-primary" id="positif">Kasus positif</button>
+        <button class="btn btn-primary" id="growth">Pertumbuhan kasus</button>
+      </div>
+      
+    </div>
+    @include('chart/idxchart')
     <h6 class="mt-1 text-center" style="color: black;">Update Terakhir: {{ $indonesia->update->penambahan->created }}</h6>
   </div>
   <!-- End ID div -->

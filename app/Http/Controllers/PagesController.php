@@ -26,14 +26,8 @@ class PagesController extends Controller
         $res = new APIController();
         $provinsi = str_replace('-', ' ', $provinsi);
         $data = $res->FetchDataProvinsi(strtoupper($provinsi));
-        return view('detail', ['data' => $data, 'prov' => $provinsi]);
-    }
-
-    public function Chart()
-    {
-        $res = new APIController();
-        $data = $res->FetchDataChart();
-        return response()->json($data);
+        $date = $res->FetchLastDate();
+        return view('detail', ['data' => $data, 'prov' => $provinsi, 'tanggal' => $date]);
     }
 
     public function About()

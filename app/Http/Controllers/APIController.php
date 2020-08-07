@@ -34,10 +34,9 @@ class APIController extends Controller
         }
     }
 
-    public function FetchDataChart()
+    public function FetchLastDate()
     {
         $client = new \GuzzleHttp\Client();
-        $result = ($client->request('GET', 'https://data.covid19.go.id/public/api/update.json')->getBody())->update->harian;
-        return $result;
+        return (json_decode($client->request('GET', 'https://data.covid19.go.id/public/api/prov.json')->getBody())->last_date);
     }
 }

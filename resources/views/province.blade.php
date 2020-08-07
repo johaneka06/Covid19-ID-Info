@@ -31,7 +31,7 @@
       @endforeach
     </tbody>
   </table>
+  <p class="text-center mt-5">Data fetched from <a href="api.kawalcorona.com/indonesia/provinsi">kawalcorona.com</a></p>
   <br>
-  <h6 class="text-center"></h6>
 </div>
 @endsection

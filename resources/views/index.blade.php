@@ -56,8 +56,9 @@
           </div>
         </div>
       </div>
-      <a href="{{ url('/provinsi') }}" class="mt-3">Kasus per-provinsi</a>
+      <a href="{{ url('/provinsi') }}" class="mt-3">Lihat kasus per-provinsi</a>
     </div>
+    @include('idxchart')
     <h6 class="mt-1 text-center" style="color: black;">Update Terakhir: {{ $indonesia->update->penambahan->created }}</h6>
   </div>
   <!-- End ID div -->
@@ -101,5 +102,4 @@
   <p class="mt-1 text-center">Sumber data: <a href="http://covid19.go.id">Pemerintah Indonesia</a> (Indonesia) dan <a href="https://github.com/mathdroid/covid-19-api">Mathdroid</a> (Internasional)</p>
   <br><br>
 </div>
-
 @endsection

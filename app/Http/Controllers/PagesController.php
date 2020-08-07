@@ -29,6 +29,12 @@ class PagesController extends Controller
         return view('detail', ['data' => $data, 'prov' => $provinsi]);
     }
 
+    public function Chart()
+    {
+        $res = new APIController();
+        return $res->FetchDataIndonesia();
+    }
+
     public function About()
     {
         return view('about');

@@ -33,4 +33,11 @@ class APIController extends Controller
             if($result->key == $provinsi) return $result;
         }
     }
+
+    public function FetchDataChart()
+    {
+        $client = new \GuzzleHttp\Client();
+        $result = ($client->request('GET', 'https://data.covid19.go.id/public/api/update.json')->getBody())->update->harian;
+        return $result;
+    }
 }

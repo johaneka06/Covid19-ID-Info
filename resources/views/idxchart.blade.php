@@ -8,22 +8,19 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script type="text/javascript">
   var ctx = document.getElementById('myChart').getContext('2d');
-
+  
   var Label = new Array();
   var Data = new Array();
   
-  // jQuery bermasalah
-  // error: $.getJSON is not a function
-  $(document).ready(function() {
-    $.ajax({
-      url: 'https://data.covid19.go.id/public/api/update.json',
-      type: 'get',
-      dataType: 'json',
-      success: function(result) {
-        console.log(result);
-      }
-    });
-  });
+  var dt = @json($indonesia->update->harian);
+  
+  $.noConflict();
+  $.each(dt, function(i, data){
+    $get = new Date(data.key_as_string);
+    $date = (("0" + get.getDate()).slice(-2) + "-" + ("0" + (get.getMonth() + 1)).slice(-2) + "-" + (get.getFullYear()))
+    Label.push($date);
+    Data.push(data.jumlah_positif_kum.value);
+  })
 
   var chart = new Chart(ctx, {
     // The type of chart we want to create
@@ -31,12 +28,12 @@
 
     // The data for our dataset
     data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: Label,
       datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'rgb(255, 99, 132)',
+        label: 'Kasus positif Indonesia',
+        backgroundColor: 'rgb(255, 0, 0)',
         borderColor: 'rgb(255, 99, 132)',
-        data: [0, 10, 5, 2, 20, 30, 45]
+        data: Data
       }]
     },
 

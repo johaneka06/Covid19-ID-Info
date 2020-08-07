@@ -32,7 +32,8 @@ class PagesController extends Controller
     public function Chart()
     {
         $res = new APIController();
-        return $res->FetchDataIndonesia();
+        $data = $res->FetchDataChart();
+        return response()->json($data);
     }
 
     public function About()

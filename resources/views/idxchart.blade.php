@@ -16,9 +16,9 @@
   
   $.noConflict();
   $.each(dt, function(i, data){
-    $get = new Date(data.key_as_string);
-    $date = (("0" + get.getDate()).slice(-2) + "-" + ("0" + (get.getMonth() + 1)).slice(-2) + "-" + (get.getFullYear()))
-    Label.push($date);
+    get = new Date(data.key_as_string);
+    date = (("0" + get.getDate()).slice(-2) + "-" + ("0" + (get.getMonth() + 1)).slice(-2) + "-" + (get.getFullYear()))
+    Label.push(date);
     Data.push(data.jumlah_positif_kum.value);
   })
 

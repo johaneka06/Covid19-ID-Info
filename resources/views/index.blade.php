@@ -20,7 +20,7 @@
       <div class="col-md-3 mt-4">
         <div class="card" style="background-color: red;">
           <div class="card-body">
-            <h3>Total kasus</h3>
+            <h3>Total Kasus</h3>
             <h5>{{ number_format($indonesia->update->total->jumlah_positif, 0, ",", ".") }}</h5>
             <i>(+{{ number_format($indonesia->update->penambahan->jumlah_positif, 0, ",", ".") }})</i>
           </div>
@@ -61,7 +61,7 @@
     <div class="mt-3 text-center justify-content-center">
       <div><h3>Lihat grafik</h3></div>
       <div>
-        <button class="btn btn-primary" id="positif">Kasus positif</button>
+        <button class="btn btn-primary" id="positif">Kasus Indonesia</button>
         <button class="btn btn-primary" id="growth">Pertumbuhan kasus</button>
       </div>
       

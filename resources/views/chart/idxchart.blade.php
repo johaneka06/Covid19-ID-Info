@@ -10,6 +10,7 @@
 <script type="text/javascript">
   var Label = new Array();
   var Data = new Array();
+  var Sembuh = new Array();
 
   var dt = @json($indonesia -> update -> harian);
 
@@ -20,6 +21,7 @@
     date = (("0" + get.getDate()).slice(-2) + "-" + ("0" + (get.getMonth() + 1)).slice(-2) + "-" + (get.getFullYear()))
     Label.push(date);
     Data.push(data.jumlah_positif.value);
+    Sembuh.push(data.jumlah_sembuh.value);
   })
 
   var chart = new Chart(ctx, {
@@ -30,9 +32,14 @@
     data: {
       labels: Label,
       datasets: [{
-        label: 'Pertambahan kasus',
+        label: 'Pertambahan positif',
         borderColor: 'rgb(255, 0, 0)',
         data: Data
+      },
+      {
+        label: 'Pertambahan sembuh',
+        borderColor: 'rgb(0, 255, 0)',
+        data: Sembuh
       }]
     },
 
@@ -42,6 +49,7 @@
 
   Label = new Array();
   Data = new Array();
+  Sembuh = new Array();
 
   var chp = document.getElementById('positifChart').getContext('2d');
   // $.noConflict();
@@ -50,6 +58,7 @@
     date = (("0" + get.getDate()).slice(-2) + "-" + ("0" + (get.getMonth() + 1)).slice(-2) + "-" + (get.getFullYear()))
     Label.push(date);
     Data.push(data.jumlah_positif_kum.value);
+    Sembuh.push(data.jumlah_sembuh_kum.value);
   })
 
   var ch = new Chart(chp, {
@@ -61,9 +70,13 @@
       labels: Label,
       datasets: [{
         label: 'Kasus positif Indonesia',
-        backgroundColor: 'rgb(255, 0, 0)',
-        borderColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 0, 0)',
         data: Data
+      },
+      {
+        label: 'Kasus sembuh Indonesia',
+        borderColor: 'rgb(0, 255, 0)',
+        data: Sembuh
       }]
     },
 

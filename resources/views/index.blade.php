@@ -22,7 +22,11 @@
           <div class="card-body">
             <h3>Total Kasus</h3>
             <h5>{{ number_format($indonesia->update->total->jumlah_positif, 0, ",", ".") }}</h5>
+            @if($indonesia->update->penambahan->jumlah_positif >= 0)
             <i>(+{{ number_format($indonesia->update->penambahan->jumlah_positif, 0, ",", ".") }})</i>
+            @else
+            <i>({{ number_format($indonesia->update->penambahan->jumlah_positif, 0, ",", ".") }})</i>
+            @endif
           </div>
         </div>
       </div>
@@ -32,7 +36,11 @@
           <div class="card-body">
             <h3>Kasus Dirawat</h3>
             <h5>{{ number_format($indonesia->update->total->jumlah_dirawat, 0, ",", ".") }}</h5>
+            @if($indonesia->update->penambahan->jumlah_dirawat >= 0)
             <i>(+{{ number_format($indonesia->update->penambahan->jumlah_dirawat, 0, ",", ".") }})</i>
+            @else
+            <i>({{ number_format($indonesia->update->penambahan->jumlah_dirawat, 0, ",", ".") }})</i>
+            @endif
           </div>
         </div>
       </div>
@@ -42,7 +50,11 @@
           <div class="card-body">
             <h3>Kasus Sembuh</h3>
             <h5>{{ number_format($indonesia->update->total->jumlah_sembuh, 0, ",", ".") }}</h5>
+            @if($indonesia->update->penambahan->jumlah_sembuh >= 0)
             <i>(+{{ number_format($indonesia->update->penambahan->jumlah_sembuh, 0, ",", ".") }})</i>
+            @elseif($indonesia->update->penambahan->jumlah_sembuh < 0)
+            <i>({{ number_format($indonesia->update->penambahan->jumlah_sembuh, 0, ",", ".") }})</i>
+            @endif
           </div>
         </div>
       </div>
@@ -52,7 +64,11 @@
           <div class="card-body">
             <h3>Kasus Meninggal</h3>
             <h5>{{ number_format($indonesia->update->total->jumlah_meninggal, 0, ",", ".") }}</h5>
+            @if($indonesia->update->penambahan->jumlah_meninggal >= 0)
             <i>(+{{ number_format($indonesia->update->penambahan->jumlah_meninggal, 0, ",", ".") }})</i>
+            @else
+            <i>({{ number_format($indonesia->update->penambahan->jumlah_meninggal, 0, ",", ".") }})</i>
+            @endif
           </div>
         </div>
       </div>
